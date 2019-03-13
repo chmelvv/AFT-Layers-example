@@ -15,7 +15,7 @@ public class AdditionTwoNumbersTest {
     public Object[][] createData1() {
         return new Object[][] {
                 { 0, 0, 0 },
-                { 2, 2, 4},
+                { 2, 2, 3},
         };
     }
 
