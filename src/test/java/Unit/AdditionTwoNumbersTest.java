@@ -22,17 +22,15 @@ public class AdditionTwoNumbersTest {
     private void add(int a,  int b, int expected) {
         AdditionTwoNumbers twoNumbers = new AdditionTwoNumbers( a, b);
         Assert.assertEquals(expected, twoNumbers.add());
-
-        log.trace("Trace Message!");
-        log.debug("Debug Message!");
-        log.info("Info Message!");
-        log.warn("Warn Message!");
-        log.error("Error Message!");
     }
 
     @Test(dataProvider = "AddingTestDP")
     public void runAddTest( int a, int b, int expectedSum) {
-        System.out.println(a + " " + b + " " + expectedSum);
+        log.trace("Trace Message!");
+        log.debug("Debug Message!" + getClass().getName().toString() );
+        log.info("Info Message!" + a + " " + b + " " + expectedSum);
+        log.warn("Warn Message!");
+        log.error("Error Message!");
         add(a, b, expectedSum);
     }
 }
