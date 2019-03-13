@@ -1,10 +1,11 @@
 package Unit;
 
 import com.mainacad.RandomGenerator;
-import org.junit.Assert;
-import org.junit.Test;
+import org.hamcrest.Matchers;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
 
 public class RandomGeneratorTest {
 
@@ -13,7 +14,7 @@ public class RandomGeneratorTest {
         RandomGenerator rg = new RandomGenerator();
         double actualRandomNumber = rg.getRandom();
 
-        Assert.assertThat( actualRandomNumber, lessThan(1.0));
+        assertThat( actualRandomNumber, Matchers.lessThan(1.0));
     }
 
     @Test
