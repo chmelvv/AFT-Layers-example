@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class AdditionTwoNumbersTest {
 
-    private static final Logger log = LoggerFactory.getLogger( AdditionTwoNumbersTest.class );
+//    private static final Logger log = LoggerFactory.getLogger( AdditionTwoNumbersTest.class );
 
     @DataProvider(name = "AddingTestDP")
     public Object[][] createData1() {
@@ -26,11 +26,11 @@ public class AdditionTwoNumbersTest {
 
     @Test(dataProvider = "AddingTestDP")
     public void runAddTest( int a, int b, int expectedSum) {
-        log.trace("Trace Message!");
-        log.debug("Debug Message!" + getClass().getName().toString() );
-        log.info("Info Message!" + a + " " + b + " " + expectedSum);
-        log.warn("Warn Message!");
-        log.error("Error Message!");
+//        log.trace("Trace Message!");
+//        log.debug("Debug Message!" + getClass().getName().toString() );
+//        log.info("Info Message!" + a + " " + b + " " + expectedSum);
+//        log.warn("Warn Message!");
+//        log.error("Error Message!");
         add(a, b, expectedSum);
     }
 }
