@@ -13,8 +13,10 @@ public class WebSiteTest {
 
     private static final Logger log = LoggerFactory.getLogger(WebSiteTest.class);
 
-   //@Test
+   @Test
     public void userCanLoginByUsername() {
+
+       System.setProperty("webdriver.chrome.driver", "C:\\Users\\vchmel\\programs\\WebDriverChrome73\\chromedriver.exe");
 
        open("https://novaposhta.ua/");
 
