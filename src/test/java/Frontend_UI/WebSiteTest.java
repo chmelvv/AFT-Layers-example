@@ -18,7 +18,15 @@ public class WebSiteTest {
 
        System.setProperty("webdriver.chrome.driver", "C:\\Users\\vchmel\\programs\\WebDriverChrome73\\chromedriver.exe");
 
-       open("https://novaposhta.ua/");
+       open("https://www.newsmanagers.com/fr/inscription-newsletter");
+       $("button.agree-button").click();
+       $("input#edit-submit").click();
+
+       try {
+           Thread.sleep(100000);
+       } catch (InterruptedException e) {
+           e.printStackTrace();
+       }
 
        log.info( getWebDriver().getCurrentUrl() );
        log.trace("Trace Message!");
