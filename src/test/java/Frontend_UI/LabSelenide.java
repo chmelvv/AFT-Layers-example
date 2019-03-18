@@ -10,6 +10,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
+import java.util.Arrays;
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
@@ -20,6 +22,7 @@ public class LabSelenide {
     @Test
     public void LabSelenideTest() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\vchmel\\programs\\WebDriverChrome73\\chromedriver.exe");
+
 
         //TODO Открыть тестовую страницу: https://www.toolsqa.com/automation-practice-form
         open("https://www.toolsqa.com/automation-practice-form");
@@ -56,23 +59,25 @@ public class LabSelenide {
 //        Actions builder = new Actions(driver);
 //        builder.click(continentSelector).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.RETURN).build().perform();
 
-
-                try {
-                    Thread.sleep(50000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
 //        Select anotherContinentSelector = new Select(driver.findElement(By.id("continents")));
 //        anotherContinentSelector.selectByVisibleText("Australia");
+        $("#continents").selectOptionContainingText("Australia");
+
 //
 //        //TODO: Выбрать несколько вариантов из списка Selenium Commands
 //        Select commandsSelector = new Select(driver.findElement(By.id("selenium_commands")));
 //        commandsSelector.selectByVisibleText("Browser Commands");
 //        commandsSelector.selectByVisibleText("Navigation Commands");
+        $("#selenium_commands").selectOptionContainingText("Browser Commands");
+        $("#selenium_commands").selectOptionContainingText("Wait Commands");
 
-        // System.out.println(Arrays.toString(commandsSelector.getAllSelectedOptions().toArray() ) );
+        System.out.println( $("#selenium_commands").getSelectedOptions().texts() );
 
+        try {
+            Thread.sleep(50000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         //TODO: Кликнуть на кнопку Button
 
         //TODO: Вывести в консоль текст лейбла Text1
