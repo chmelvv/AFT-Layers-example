@@ -17,14 +17,13 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '17'
-        distribution: 'temurin'
         cache: maven
 
     - uses: browser-actions/setup-chrome@latest
     - run: chrome --version
 
     - name: Maven. Test
-      run: mvn -B clean test allure:report
+      run: mvn clean test
 
     - name: Maven. Report
       run: mvn allure:report
