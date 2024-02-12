@@ -26,7 +26,7 @@ jobs:
     - name: Maven. Test
       run: mvn clean test
 
-    - name: Maven. Test
+    - name: Maven. Report
       run: mvn allure:report
 
     - name: Test marketplace action
@@ -46,6 +46,11 @@ jobs:
         PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: allure-history
+
+    - name: Show GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
 
     - name: Post the link to the report
       if: always()
