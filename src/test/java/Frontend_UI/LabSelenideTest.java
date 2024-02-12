@@ -1,19 +1,17 @@
 package Frontend_UI;
 
 import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.*;
-import static org.testng.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LabSelenideTest {
 
     @Test
-    public void LabSelenideTest() {
+    public void LabSelenideCheck() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-debugging-pipe");
         options.addArguments("--no-sandbox");
