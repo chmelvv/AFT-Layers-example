@@ -24,10 +24,7 @@ jobs:
     - run: chrome --version
 
     - name: Maven. Test
-      run: mvn clean test
-
-    - name: Maven. Report
-      run: mvn allure:report
+      run: mvn clean test allure:report
 
     - name: Test marketplace action
       uses: simple-elf/allure-report-action@master
