@@ -47,11 +47,6 @@ jobs:
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: allure-history
 
-    - name: Show GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
-
     - name: Post the link to the report
       if: always()
       uses: Sibz/github-status-action@v1
@@ -59,5 +54,4 @@ jobs:
         authToken: ${{secrets.GITHUB_TOKEN}}
         context: 'Test report'
         state: 'success'
-#        sha: ${{github.event.pull_request.head.sha || github.sha}}}
-        target_url: https://chmelvv.github.io/AFT-Layers-example/github-allure-history/${{ github.run_number }}
+        target_url: https://chmelvv.github.io/AFT-Layers-example/${{ github.run_number }}
