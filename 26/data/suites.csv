@@ -1,0 +1,2 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Feb 12 11:56:56 GMT 2024","Mon Feb 12 11:57:07 GMT 2024","11113","","Frontend_UI.LabSelenideTest","","Frontend_UI.LabSelenideTest","LabSelenideCheck","LabSelenideCheck()",""
