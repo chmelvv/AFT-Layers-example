@@ -14,11 +14,13 @@ public class LabSelenideTest {
 
     @Test
     public void LabSelenideTest() {
-        //chrome_options.add_argument('--remote-debugging-pipe')
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--remote-debugging-pipe");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-debugging-pipe");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
         Configuration.browserCapabilities = new DesiredCapabilities();
-        Configuration.browserCapabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+        Configuration.browserCapabilities.setCapability(ChromeOptions.CAPABILITY, options);
         open("https://www.pravda.com.ua/eng/");
         assertEquals($x("//a[contains(text(),'Support Us')]").getAttribute("href"),  "https://www.pravda.com.ua/eng/supportus/");
     }
